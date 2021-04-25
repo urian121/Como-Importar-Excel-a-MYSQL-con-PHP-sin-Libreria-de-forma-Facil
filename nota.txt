@@ -1,0 +1,14 @@
+Importar y Exportar datos entre MySQL y Excel
+Importar datos de Excel a MySQL con php
+Importar archivo de Excel a MySQL usando PHP 
+Importar un Excel a MySQL con PHP
+Importar un fichero Excel a la Base de Datos Mysql 
+De Excel a MySQL fácilmente y sin romperte la cabeza
+
+Importar datos de Excel a MySQL con php
+Como 📥 IMPORTAR 📤 datos de EXCEL a MYSQL con PHP
+Importar archivo excel desde PHP y guardar datos en nuestra bd
+Importar de Excel a MySQL usando phpMyAdmin
+
+
+https://es.stackoverflow.com/questions/55668/actualizar-div-autom%C3%A1ticamente
