@@ -52,9 +52,9 @@ else{
     } 
   }
 
-   echo '<h5>'. $i. "). " .$linea.'</h5>';
  $i++;
 }
 
-
 ?>
+
+<a href="index.php">Atras</a>

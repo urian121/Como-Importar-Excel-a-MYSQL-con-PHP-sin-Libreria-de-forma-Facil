@@ -1,0 +1,62 @@
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5F5FC !important;
+    color: #555;
+  }
+
+/***STYLE PARA EL FILE***/
+.zmdi-upload{
+    padding: 0px 15px 0px 0px;
+}
+.zmdi-upload:hover{
+    color: black;
+    transition: color 0.2s linear 0.2s;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 12px;
+  background-color: #4245a8;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+/*******/
+
+.btn-enviar{
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 45px;
+  background-color: coral;
+  border: none;
+  border-radius: 2px;
+}
+.btn-enviar:hover{
+  color: #333;
+}
+h6{
+  color:#333; 
+  background-color: #cecece; 
+  padding: 10px 0px;
+}
+h3{
+    font-size: 35px;
+    font-weight: 900;
+    color: #ffa900;
+    margin-top: 150px;
+}

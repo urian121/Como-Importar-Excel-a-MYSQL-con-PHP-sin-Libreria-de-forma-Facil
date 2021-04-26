@@ -3,11 +3,11 @@ require('config.php');
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
-$lineas     = file($archivotmp);
+$lineas  = file($archivotmp);
 
 $i = 0;
 
-foreach ($lineas  $linea) {
+foreach ($lineas as $linea) {
     $cantidad_registros = count($lineas);
     $cantidad_regist_agregados =  ($cantidad_registros - 1);
 

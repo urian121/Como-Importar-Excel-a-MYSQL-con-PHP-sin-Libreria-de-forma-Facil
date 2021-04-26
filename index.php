@@ -9,65 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/cargando.css">
-  <style>
-  body{
-    height: 100vh;
-    width: 100%;
-    background-color: #F5F5FC !important;
-    color: #555;
-  }
-
-/***STYLE PARA EL FILE***/
-.zmdi-upload{
-    padding: 0px 15px 0px 0px;
-}
-.zmdi-upload:hover{
-    color: black;
-    transition: color 0.2s linear 0.2s;
-}
-
-.file-input__input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.file-input__label {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px 12px;
-  background-color: #4245a8;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
-}
-/*******/
-
-.btn-enviar{
-  color: #fff;
-  font-weight: 600;
-  padding: 10px 45px;
-  background-color: coral;
-  border: none;
-  border-radius: 2px;
-}
-.btn-enviar:hover{
-  color: #333;
-}
-h3{
-    font-size: 35px;
-    font-weight: 900;
-    color: #ffa900;
-    margin-top: 150px;
-}
-  </style>
+  <link rel="stylesheet" type="text/css" href="css/cssGenerales.css">
 </head>
 <body>
 
@@ -91,31 +33,69 @@ h3{
 </nav>
 
 
-<div class="container mt-7">
-<br><br>
-<br><br>
-
+<div class="container">
 
 <h3 class="text-center">
     Cómo Importar Excel a MYSQL con PHP sin Libreria de forma Fácil
 </h3>
 <hr>
+<br><br>
 
 
-
-<form action="recibe_excel.php" method="POST" enctype="multipart/form-data"/>
-  <div class="file-input text-center">
-      <input  type="file" name="dataCliente" id="file-input" class="file-input__input"/>
-      <label class="file-input__label" for="file-input">
-        <i class="zmdi zmdi-upload zmdi-hc-2x"></i>
-        <span>Elegir Archivo Excel</span></label
-      >
+ <div class="row">
+    <div class="col-md-7">
+      <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data"/>
+        <div class="file-input text-center">
+            <input  type="file" name="dataCliente" id="file-input" class="file-input__input"/>
+            <label class="file-input__label" for="file-input">
+              <i class="zmdi zmdi-upload zmdi-hc-2x"></i>
+              <span>Elegir Archivo Excel</span></label
+            >
+          </div>
+      <div class="text-center mt-5">
+          <input type="submit" name="subir" class="btn-enviar" value="Subir Excel"/>
+      </div>
+      </form>
     </div>
-<div class="text-center mt-5">
-    <input type="submit" name="subir" class="btn-enviar" value="Subir Excel"/>
-</div>
-</form>
 
+    <div class="col-md-5">
+  <?php
+  header("Content-Type: text/html;charset=utf-8");
+  include('config.php');
+  $sqlClientes = ("SELECT * FROM clientes ORDER BY id ASC");
+  $queryData   = mysqli_query($con, $sqlClientes);
+  $total_client = mysqli_num_rows($queryData);
+  ?>
+
+      <h6 class="text-center">
+        Lista de Clientes <strong>(<?php echo $total_client; ?>)</strong>
+      </h6>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+               <th>Nombre</th>
+              <th>Correo</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php 
+            $i = 1;
+            while ($data = mysqli_fetch_array($queryData)) { ?>
+            <tr>
+              <th scope="row"><?php echo $i++; ?></th>
+              <td><?php echo $data['nombre']; ?></td>
+              <td><?php echo $data['correo']; ?></td>
+              <td><?php echo $data['celular']; ?></td>
+            </tr>
+          <?php } ?>
+          </tbody>
+        </table>
+
+    </div>
+  </div>
 
 </div>
 
