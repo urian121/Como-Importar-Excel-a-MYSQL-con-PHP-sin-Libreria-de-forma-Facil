@@ -44,7 +44,7 @@
 
  <div class="row">
     <div class="col-md-7">
-      <form action="recibe_excel.php" method="POST" enctype="multipart/form-data"/>
+      <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data"/>
         <div class="file-input text-center">
             <input  type="file" name="dataCliente" id="file-input" class="file-input__input"/>
             <label class="file-input__label" for="file-input">
